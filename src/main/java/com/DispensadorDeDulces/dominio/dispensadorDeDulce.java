@@ -1,6 +1,7 @@
 package com.DispensadorDeDulces.dominio;
 
 public class dispensadorDeDulce {
+    public static final short CANTIDAD_DE
     public String marca;
     public int capacidad;
     public int cantidadActual;
