@@ -30,7 +30,6 @@ public class agenda{
 
     public void buscarPornombre(String nombre){
         Contacto contactoPaBuscarN = this.contactos.stream().filter(contacto -> contacto.getNombre()==nombre).findFirst().orElse(null);
-        return; contactoPaBuscarN;
     }
     public Contacto buscarPorCelular(long telef) {
         Contacto contactoPaBuscar = this.contactos.stream().filter(contacto -> contacto.getTelef() == telef).findFirst().orElse(null);
@@ -38,7 +37,6 @@ public class agenda{
     }
     public void buscarPorApellido(String apellido){
         Contacto contactoPaBuscarA = this.contactos.stream().filter(contacto -> contacto.getApellido()==apellido).findFirst().orElse(null);
-        return contactoPaBuscarA;
     }
 
     public void editar(long CeluViejo, long CeluNuevo){

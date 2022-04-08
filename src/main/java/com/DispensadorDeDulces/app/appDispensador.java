@@ -5,7 +5,7 @@ public class appDispensador {
     public static void main(String[] args0) {
         Dulce dulce = new Dulce("wafer", "chocolate");
 
-        dispensadorDeDulce dispensador = new dispensadorDeDulce("dulexinhos",x100)
+        dispensadorDeDulce dispensador = new dispensadorDeDulce("dulexinhos",1);
         dispensador.Dulce= dulce;
     }
 }

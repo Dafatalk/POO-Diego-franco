@@ -1,4 +1,4 @@
 package com.dispesadorTaller.app;
 
-public class appDispensadorTaller {
-}
+public class appDispensadorTaller { }
+

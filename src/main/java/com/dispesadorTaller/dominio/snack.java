@@ -4,7 +4,7 @@ public class snack {
     private String marca;
     private  int codigo;
     private int precio;
-    private short unidades;
+    private int unidades;
     private static int id;
     private static final int CANTIDAD_MAXIMA_DEL_MISMO_SNACK = 6;
 
@@ -37,7 +37,7 @@ public class snack {
         return precio;
     }
 
-    public short getUnidades() {
+    public int getUnidades() {
         return unidades;
     }
 
@@ -49,7 +49,9 @@ public class snack {
         this.precio = precio;
     }
 
-    public void setUnidades(short unidades) {
+    public void setUnidades(int unidades) {
         this.unidades = unidades;
     }
 }
+
+

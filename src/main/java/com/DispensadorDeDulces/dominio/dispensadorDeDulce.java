@@ -1,7 +1,7 @@
 package com.DispensadorDeDulces.dominio;
 
 public class dispensadorDeDulce {
-    public static final short CANTIDAD_DE
+    public static final short CANTIDAD_DE=10;
     public String marca;
     public int capacidad;
     public int cantidadActual;
@@ -9,7 +9,7 @@ public class dispensadorDeDulce {
 
     public dispensadorDeDulce(String marca, double capacidad) {
         this.marca = marca;
-        this.capacidad = capacidad;
+        this.capacidad = (int) capacidad;
     }
 
     public boolean servir(int cantidadAServir) {
