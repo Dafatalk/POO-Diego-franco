@@ -12,41 +12,22 @@ public class calcu {
         this.calcu= new ArrayList<Integer>();
     }
 
-    public int sumar(int numero1, int numero2) {
-        int res= numero1 + numero2;
+    public int sumar(List<Integer> nros) {
+        return nros.stream().mapToInt(nro -> nro).sum();
+        }
 
+    public static int restar(List<Integer> nros){
 
-        return res;
+        return nros.stream().mapToInt(nro->nro).reduce((numero1 , numero2) -> numero1 - numero2).getAsInt();
     }
-    public int restar(int numero1, int numero2){
-        int res= numero1 - numero2;
-
-        return res;
-    }
-    public int dividir(int numero1, int numero2){
-        int res= numero1 / numero2;
-        return res;
+    public int dividir(List<Integer> nros){
+        return nros.stream().mapToInt(nro->nro).reduce((numero1 , numero2) -> numero1 / numero2).getAsInt();
 
     }
-    public  int multiplicar(int numero1, int numeros2){
-        int res= numero1 * numero2;
-        return res;
+    public  int multiplicar(List<Integer> nros){
+        return nros.stream().mapToInt(nro->nro).reduce((numero1 , numero2) -> numero1 * numero2).getAsInt();
+
     }
 
 
-    public int getNumero1() {
-        return numero1;
-    }
-
-    public void setNumero1(int numero1) {
-        this.numero1 = numero1;
-    }
-
-    public int getNumero2() {
-        return numero2;
-    }
-
-    public void setNumero2(int numero2) {
-        this.numero2 = numero2;
-    }
 }

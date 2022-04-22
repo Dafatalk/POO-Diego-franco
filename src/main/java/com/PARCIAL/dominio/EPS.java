@@ -33,6 +33,7 @@ public class EPS {
             this.pacientes.remove(PacientePAEliminar);
         }
 
+        return false;
     }
 
     public Paciente BuscarPaciente(int cedula) {
@@ -44,11 +45,7 @@ public class EPS {
     }
 
 
-    public void BuscarSinenfermedad() {
-        Paciente PacienteSinEnfermedad;
-        PacienteSinEnfermedad = this.pacientes.stream().filter(e -> e.getEnfermedad() == null).findFirst().orElse();
 
-    }
 
     public void Ordenar() {
         this.pacientes.sort(Comparator.comparing(Paciente::getNombre).thenComparing(Paciente::getCedula));
