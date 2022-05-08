@@ -1,13 +1,13 @@
-package com.IndiosVSEspañoles.dominio;
+package com.IndiosVSEspanoles.dominio;
 
 import java.util.Arrays;
 import java.util.List;
 
-public class EspañolesVSIndios {
+public class EspanolesVSIndios {
 public static final int INDIO =0;
 public static final int COLON=1;
 public static final int NATURAL=2;
-
+//OP es la opción que escoja el usuario
 public static final List<Integer> OP = Arrays.asList(INDIO, COLON, NATURAL);
 private String juegoname;
 private String nick;
@@ -15,11 +15,11 @@ private int ganadasJugador;
 private int ganadasMaqui;
 private int empate;
 
-public EspañolesVSIndios (String juegoname){
+public EspanolesVSIndios(String juegoname){
 
     this.juegoname=juegoname;
 }
-public EspañolesVSIndios(String nick, int ganadasusua, int ganadasMaqui, int empate){
+public EspanolesVSIndios(String nick, int ganadasJugador, int ganadasMaqui, int empate){
     this.nick=nick;
     this.ganadasJugador=ganadasJugador;
     this.ganadasMaqui=ganadasMaqui;

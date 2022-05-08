@@ -4,7 +4,6 @@ package com.calculadora.app;
 import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 import com.calculadora.dominio.calcu;
@@ -17,7 +16,7 @@ public class pane {
     private static final  int SALIR = -1;
     private static final int SI=0;
     private static final int NO =1;
-    private static ImageIcon icono = new ImageIcon("com/calculadora/app/calc.png");//NO ME PONE EL ICONO AAAAAA!
+    private static ImageIcon icono = new ImageIcon(pane.class.getResource("/calc.png"));//NO ME PONE EL ICONO AAAAAA!
     private List<Integer> calcu;
 
 

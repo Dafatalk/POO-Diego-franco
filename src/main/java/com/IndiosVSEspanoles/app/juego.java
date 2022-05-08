@@ -1,8 +1,10 @@
-package com.IndiosVSEspañoles.app;
+package com.IndiosVSEspanoles.app;
 
-import com.IndiosVSEspañoles.dominio.EspañolesVSIndios;
+import com.IndiosVSEspanoles.dominio.EspanolesVSIndios;
 
 import javax.swing.*;
+import java.awt.*;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 
@@ -15,7 +17,7 @@ public class juego {
     public static void main(String[] args) {
         int jugadorOP = 0;
         JCheckBox dificul = new JCheckBox("hardcore?");
-        EspañolesVSIndios game = new EspañolesVSIndios("españoles, naturaleza e indios");
+        EspanolesVSIndios game = new EspanolesVSIndios("españoles, naturaleza e indios");
         String nickA = null;
         while (true) {
             int OPMENU = JOptionPane.showOptionDialog(null, "qué quieres hacer?",
@@ -28,21 +30,21 @@ public class juego {
                         game.setNick(nickA);
                     }
                     String OPGAME = (String) JOptionPane.showInputDialog(null,
-                            "qué quiere elegir?","INDIOS VS ESPAÑOLES", 0,null,
+                            "qué quiere elegir?","INDIOS VS ESPANOLES", 0,null,
                             Arrays.asList("Indio", "español", "naturaleza").toArray(),null);
                     if(OPGAME=="Indio"){
-                        jugadorOP=EspañolesVSIndios.INDIO;
+                        jugadorOP= EspanolesVSIndios.INDIO;
                     }
                     else if(OPGAME=="español"){
-                        jugadorOP=EspañolesVSIndios.COLON;
+                        jugadorOP= EspanolesVSIndios.COLON;
                     }
                     else{
-                        jugadorOP=EspañolesVSIndios.NATURAL;
+                        jugadorOP= EspanolesVSIndios.NATURAL;
                     }
 
                     Random a = new Random();
-                    int ERan= EspañolesVSIndios.OP.get(a.nextInt(EspañolesVSIndios.OP.size()));
-                    mostrarmsg("el PC eligio" + ERan);
+                    int ERan= EspanolesVSIndios.OP.get(a.nextInt(EspanolesVSIndios.OP.size()));
+                    mostrarmsg("el PC eligio" +ERan);
 
                     mostrarmsg(game.getNick()+ game.play(jugadorOP,ERan));
                     break;
@@ -71,7 +73,8 @@ public class juego {
                             "si se eligie lo mismo va a contar como empate y en caso de "+ "\n"+
                             "empate, deberan repetir el juego hasta que desempaten" + "\n"+"\n" + "GG!!");
                     break;
-
+                case -1:
+                    System.exit(0);
 
             }
 
@@ -87,7 +90,6 @@ public class juego {
         }while (nick ==null);
         return nick;
     }
-
     private static void mostrarmsg(String msg) {
         JOptionPane.showMessageDialog(null, msg, "INDIO VS ESPAÑOL", JOptionPane.PLAIN_MESSAGE,null);
     }
