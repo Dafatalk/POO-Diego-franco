@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Locale;
 import java.util.stream.Collectors;
 
 public class Facturacion {
@@ -19,12 +20,21 @@ public class Facturacion {
     public void GenerarFactura(String cliente, int valor, LocalDate fecha) {
         Factura factura;
 
-        if (fecha.isBefore(vencimiento)) {
+        if (fecha.isBefore(LocalDate.now())) {
             factura = new FacturaVencida(valor, cliente, fecha);
         } else {
-            if (valor >= 100000) {
+            if (valor >= 100000 && (cliente.toLowerCase().startsWith("a")||
+                    cliente.toLowerCase().startsWith("e")||
+                    cliente.toLowerCase().startsWith("i")||
+                    cliente.toLowerCase().startsWith("o")||
+                    cliente.toLowerCase().startsWith("u"))) {
+                factura = new FacturaConDescuento(valor, cliente, fecha);
+            }
+            else if (valor>=100000){
                 factura = new FacturaConIva(valor, cliente, fecha);
-            } else {
+
+            }
+            else {
                 factura = new FacturaSinIva(valor, cliente, fecha);
             }
         }
@@ -64,6 +74,12 @@ public class Facturacion {
         return this.facturas.stream()
                 .filter(fac -> fac instanceof FacturaVencida)
                 .map(fac -> (FacturaVencida) fac)
+                .collect(Collectors.toList());
+    }
+    public List<FacturaConIva> FacturasConDescuento() {
+        return this.facturas.stream()
+                .filter(fac -> fac instanceof FacturaConDescuento)
+                .map(fac -> (FacturaConIva) fac)
                 .collect(Collectors.toList());
     }
 }

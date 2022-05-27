@@ -20,7 +20,7 @@ public class juego {
         EspanolesVSIndios game = new EspanolesVSIndios("españoles, naturaleza e indios");
         String nickA = null;
         while (true) {
-            int OPMENU = JOptionPane.showOptionDialog(null, "qué quieres hacer?",
+            int OPMENU = JOptionPane.showOptionDialog(null, "que quieres hacer?",
                     "INDIOS VS ESPAÑOLES", 0, 0,
                     null, Arrays.asList("jugar", "puntos", "como se juega?", dificul).toArray(), null);
             switch (OPMENU) {
@@ -41,7 +41,6 @@ public class juego {
                     else{
                         jugadorOP= EspanolesVSIndios.NATURAL;
                     }
-
                     Random a = new Random();
                     int ERan= EspanolesVSIndios.OP.get(a.nextInt(EspanolesVSIndios.OP.size()));
                     mostrarmsg("el PC eligio" +ERan);
